@@ -74,7 +74,7 @@ requests==0.11.1
 git+git://github.com/fgregg/legistar-scrape#egg=legistar-scrape
 BeautifulSoup
 BeautifulSoup4
-pdfminer
+pdfminer==20110515
 slate
 git+https://github.com/abielr/mechanize.git#egg=mechanize
 
