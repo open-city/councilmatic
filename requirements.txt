@@ -2,6 +2,7 @@
 # Server
 # ====================
 Django==1.4.10
+python-memcached
 
 
 
