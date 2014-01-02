@@ -1,7 +1,7 @@
 # ====================
 # Server
 # ====================
-Django==1.4
+Django==1.4.10
 
 
 
@@ -24,7 +24,7 @@ markdown
 # ====================
 # Search
 # ====================
-git+git://github.com/toastdriven/django-haystack.git#egg=django-haystack==2.0.0-beta
+django-haystack==2.0.0
 
 # Using whoosh as the haystack (search) backend for now, for simplicity (it's
 # pure Python).  May use pysolr later, but may not need to.
