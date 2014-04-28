@@ -4,13 +4,14 @@ from datetime import date, time, datetime
 from collections import defaultdict
 from itertools import chain
 from itertools import product
+from django.http import QueryDict
 
 from subscriptions.feeds import ContentFeed
 from subscriptions.feeds import ContentFeedLibrary
 from phillyleg.models import LegFile
 from phillyleg.models import LegMinutes
 from haystack.query import SearchQuerySet
-
+from urllib import urlencode
 
 log = logging.getLogger(__name__)
 library = ContentFeedLibrary()
@@ -150,7 +151,9 @@ class SearchResultsFeed (ContentFeed):
         specific.  Just keep that in mind.
 
         """
-        if isinstance(search_filter, dict):
+        if isinstance(search_filter, QueryDict):
+            self.filter = dict((key, lval) for key, lval in search_filter.iterlists())
+        elif isinstance(search_filter, dict):
             self.filter = search_filter
         elif search_filter is not None:
             self.filter = json.loads(search_filter)
@@ -216,6 +219,16 @@ class SearchResultsFeed (ContentFeed):
             label += ' sponsored by ' + ' or '.join(self.filter['sponsors'])
 
         return label
+    
+    @property
+    def filter_query(self):
+        d = {}
+        for k,v in self.filter.items():
+            if isinstance(v, list):
+                d[k] = v[0]
+            else:
+                d[k] = k
+        return urlencode(d)
 
 
 def register_feeds():

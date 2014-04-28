@@ -9,7 +9,7 @@
           <button type="submit" class="primaryAction btn"
               data-toggle="tooltip" data-title="{% trans 'Unsubscribe' %}"
               data-placement="bottom">{{ unsubscribe_text|default:_('Unsubscribe from this list') }}</button>
-	<a class="subscription_rss_link" href="{% url rss_feed %}?{{ feed.filter.urlencode }}"><img src='/static/main/images/rss.png' alt='RSS'/></a>
+	<a class="subscription_rss_link" href="{% url rss_feed %}?{{ feed.filter_query }}"><img src='/static/main/images/rss.png' alt='RSS'/></a>
       </form>
     {% else %}
       {% if user.is_authenticated %}
@@ -23,6 +23,6 @@
             <button type="submit" class="primaryAction btn"
                 data-toggle="tooltip" data-title="{% trans 'Subscribe' %}"
                 data-placement="bottom">{{ subscribe_text|default:_('Subscribe to this list') }}</button>
-	<a class="subscription_rss_link" href="{% url rss_feed %}?{{ feed.filter.urlencode }}"><img src='/static/main/images/rss.png' alt='RSS'/></a>
+	<a class="subscription_rss_link" href="{% url rss_feed %}?{{ feed.filter_query }}"><img src='/static/main/images/rss.png' alt='RSS'/></a>
       </form>
     {% endif %}

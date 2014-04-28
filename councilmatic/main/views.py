@@ -276,7 +276,7 @@ class CouncilMemberDetailView (BaseDashboardMixin,
                 recent_topics.append({'id': t.id, 'topic': t.topic, 'leg_count': leg_count, 'children': children})
 
         recent_topics_sorted = sorted(recent_topics, key=lambda k: k['leg_count'], reverse=True)
-
+        context_data = super(CouncilMemberDetailView, self).get_context_data(**kwargs)
         context_data['recent_topics'] = recent_topics_sorted
         context_data['routine_topics'] = routine_topics
         return context_data
