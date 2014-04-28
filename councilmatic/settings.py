@@ -282,16 +282,16 @@ LOGGING = {
             'level':'INFO',
         },
         'django.request': {
-            'handlers': ['logfile', 'mail_admins'],
+            'handlers': ['mail_admins'],
             'level': 'WARNING',
             'propagate': False,
         },
         'councilmatic': {
-            'handlers': ['console', 'logfile', 'mail_admins'],
+            'handlers': ['console', 'mail_admins'],
             'level': 'DEBUG',
         },
         'phillyleg.management': {
-            'handlers': ['console', 'logfile', 'mail_admins'],
+            'handlers': ['console', 'mail_admins'],
             'level': 'DEBUG',
         },
     }
