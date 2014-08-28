@@ -14,7 +14,7 @@
       <div class="content">
         <div class="row-fluid">
           <img class='span2 img-polaroid' alt="{{ councilmember.name }}" src="{{STATIC_URL}}{{ councilmember.headshot }}">
-          <div class='span8'>
+          <div class='span4'>
             <h1>
               {{ councilmember.name }}
               <small><br />{{ councilmember.title }}</small>
@@ -23,6 +23,12 @@
             {% include 'subscriptions/subscribe_form.html' with subscribe_text=_('Follow this person') unsubscribe_text=_('Stop following this person') %}
 
           </div>
+	  <div class='span4'>
+	    <ins class="adsbygoogle" data-ad-client="ca-pub-5762998203876404" data-ad-slot="2932332572"></ins>
+    	    <script>
+        	(adsbygoogle = window.adsbygoogle || []).push({});
+    	    </script>
+	  </div>
 
         </div>
         <hr />
