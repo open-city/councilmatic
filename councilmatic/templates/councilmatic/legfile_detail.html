@@ -14,7 +14,7 @@
 
   <section id="main" >
     <div class='row-fluid'>
-      <div class='offset1 span10'>
+      <div class='offset1 span7'>
 	
 	      <h1>
           {{ object.type }} {{ object.id }}
@@ -30,9 +30,15 @@
           {% for topic in object.metadata.topics.all %}
 	    <a href="/search/?q=&topics={{ topic.topic }}"><span class="label {{ topic.get_label }}">{{ topic.topic }}</span></a>
           {% endfor %}
-	      <hr />
+	<hr />
       </div>
-
+      <div class='span4'>
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5762998203876404" data-ad-slot="8555756970" data-ad-format="auto"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+    </div>
     <div class='row-fluid'>
       <div class='offset1 span7'>
 
