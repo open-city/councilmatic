@@ -11,7 +11,7 @@
 {% block content %}
 <div id="dashboard">
   <div class='row-fluid'>
-    <div class='offset1 span10'>
+    <div class='offset1 span6'>
       <p class='lead'>Keep tabs on what your City Council is doing.</p>
       <section id="dashboard-search" class="hero-unit">
         <header>
@@ -20,12 +20,19 @@
 
         <form class="search form-search" action="{% url 'search' %}" method="GET">
           <div class="ctrlHolder">
-            <input name="q" type="text" class="input-xxlarge" placeholder="Rahm Emanuel, zoning, TIF, Ordinance O2013-3361, etc.">
+            <input name="q" type="text" class="input-xxlarge" style='width: 430px' placeholder="Rahm Emanuel, zoning, Ordinance O2013-3361, etc.">
             <button type="submit" class="btn btn-large btn-info">{% trans "Search" %}</button>
           </div>
         </form>
       </section>
     </div>
+    <div class='span4'>
+	<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5762998203876404" data-ad-slot="8555756970" data-ad-format="auto"></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+    </div>
+
   </div> <!-- row-fluid -->
   <div class='row-fluid'>
     <section id="dashboard-legislation" class="row-fluid">
