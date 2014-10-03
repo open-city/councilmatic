@@ -5,7 +5,10 @@
 {% load comments %}
 {% load compress %}
 
-{% block title %}{{ object.title|truncatewords:14 }}{% endblock %}
+{% block title %}
+	{{ object.title|truncatewords:14 }} |
+	{% for topic in object.metadata.topics.all %}{{ topic.topic }}{% if not forloop.last %}, {% endif %}{% endfor %}
+{% endblock %}
 {% block load_early %}
 <!--  <link rel="stylesheet" href="{{ STATIC_URL }}phillyleg/legislation.css">-->
 {% endblock %}
