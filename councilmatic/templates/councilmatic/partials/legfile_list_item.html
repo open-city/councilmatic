@@ -16,6 +16,10 @@
 </p>
 <p>{{ file.title|truncatewords:25 }}</p>
 
+{% if file.controlling_body != '' %}
+<p>Controlled by: <a href='/search/?q=&controlling_bodies={{ file.controlling_body }}'>{{ file.controlling_body }}</a>
+{% endif %}
+
 <p> Sponsored by: 
 {% for sponsor in file.sponsors.all %}
   <a href="/member/{{ sponsor.id }}">{{ sponsor.name }}</a>
