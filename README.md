@@ -1,4 +1,4 @@
-Councilmatic! [![Build Status](https://travis-ci.org/codeforamerica/councilmatic.png)](http://travis-ci.org/codeforamerica/councilmatic)
+DEPRECATED, replaced by https://github.com/datamade/chi-councilmatic
 =============
 City Council Legislative Subscription Service.
 
